@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ari & Richard — One Year together ♡</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Satisfy&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --rose:#e8a4a4;--rose-dk:#c97676;--blush:#f5e6e6;--mauve:#b87c8c;
+  --cream:#fdf8f4;--sand:#f0e8df;--warm:#e8ddd4;
+  --ink:#2c2118;--br# him-and-I-own:#6b4c3b;--muted:#9c8578;
+  --sage:#8fad8a;--sage-lt:#d4e6d1;--lavender:#c5b8d8;--lav-lt:#ede8f5;
+  --gold:#c9a96e;--shadow:rgba(44,33,24,.10);
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Nunito',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,248,244,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,170,150,.2);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Satisfy',cursive;font-size:1.25rem;color:var(--rose-dk)}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:.78rem;text-decoration:none;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:var(--rose-dk)}
+@media(max-width:600px){.nav-links{display:none};nav{padding:0 20px}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 24px 70px;position:relative;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(232,164,164,.2) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 85% 85%,rgba(197,184,216,.18) 0%,transparent 60%),var(--cream)}
+
+.petal{position:absolute;font-size:1.1rem;opacity:.3;animation:drift linear infinite;pointer-events:none}
+@keyframes drift{0%{transform:translateY(-40px) rotate(0deg);opacity:0}10%{opacity:.3}90%{opacity:.2}100%{transform:translateY(110vh) rotate(360deg);opacity:0}}
+
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--blush);border:1px solid rgba(200,150,150,.3);border-radius:100px;padding:7px 22px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-dk);font-weight:600;margin-bottom:40px;opacity:0;animation:riseIn .9s ease .2s forwards}
+.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(3.4rem,9vw,7.5rem);font-weight:400;line-height:1.04;color:var(--ink);margin-bottom:20px;opacity:0;animation:riseIn .9s ease .45s forwards}
+.hero-title em{font-style:italic;color:var(--rose-dk)}
+.hero-names{font-family:'Satisfy',cursive;font-size:clamp(2rem,5vw,3.2rem);color:var(--mauve);margin-bottom:28px;opacity:0;animation:riseIn .9s ease .65s forwards}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--muted);max-width:400px;line-height:1.75;margin-bottom:56px;opacity:0;animation:riseIn .9s ease .85s forwards}
+.hero-scroll{display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:riseIn .9s ease 1.1s forwards}
+.scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--rose),transparent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+.scroll-txt{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+@keyframes riseIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* SHARED */
+section{padding:110px 24px}
+.section-inner{max-width:1080px;margin:0 auto}
+.section-tag{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+.section-heading{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5vw,3.6rem);font-weight:400;line-height:1.12;margin-bottom:16px}
+.section-heading em{font-style:italic;color:var(--rose-dk)}
+.section-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--muted);margin-bottom:60px;max-width:480px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border:none;border-radius:100px;font-family:'Nunito',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.04em;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-rose{background:var(--rose-dk);color:white;box-shadow:0 4px 16px rgba(200,120,120,.3)}
+.btn-rose:hover{background:#b86060;box-shadow:0 8px 24px rgba(200,120,120,.35)}
+.btn-sage{background:var(--sage);color:white;box-shadow:0 4px 16px rgba(120,170,120,.28)}
+.btn-sage:hover{background:#6f9169}
+.btn-mauve{background:var(--mauve);color:white;box-shadow:0 4px 16px rgba(180,120,140,.28)}
+.btn-mauve:hover{background:#9e6578}
+
+.divider{text-align:center;padding:20px 0;font-size:1rem;color:var(--rose);letter-spacing:14px;opacity:.45}
+
+/* MUSIC */
+.music-section{background:linear-gradient(135deg,#f9f0f0,#f4edf5);border-top:1px solid rgba(200,170,170,.15);border-bottom:1px solid rgba(200,170,170,.15);padding:80px 24px}
+.music-inner{max-width:640px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
+.music-lbl{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mauve);font-weight:600}
+.music-title{font-family:'DM Serif Display',serif;font-size:2.1rem;color:var(--ink)}
+.music-title span{font-style:italic;color:var(--mauve)}
+.music-note{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1rem}
+.music-player{width:100%;max-width:520px;border-radius:16px;overflow:hidden;box-shadow:0 8px 36px rgba(180,120,140,.18)}
+
+.pic{background: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmw5dTZnNDY1dHYwY2Y1b2lmcGp4MWFndzVzZ2IwNmR2M3lmaG9qciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f9EmXxglhdhAj1bo28/giphy.gif);
+     background-size:300px;
+     background-attachment: fixed;}
+
+.pic3{background: url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGlybzh0a3lvOHV3Z2U4YjI2bXZlZXBocHUycW8xdW54bnF5a2w4diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1JmGiBtqTuehfYxuy9/giphy.gif);
+  background-size: 200px;
+  background-attachment: fixed;}
+
+  .pic2{background: url(https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXFsbjl4bWM0amcxMHNkeHh2NmtyMnJteDlwdW0ybXJvYzh2NTBuOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qFmdpUKAFZ6rMobzzu/giphy.gif);
+     background-size:250px;
+     background-attachment: fixed;}
+
+ 
+/* PHOTOS */
+.photos-section{background:var(--cream)}
+.gallery-masonry{columns:3;column-gap:20px}
+@media(max-width:768px){.gallery-masonry{columns:2}}
+@media(max-width:480px){.gallery-masonry{columns:1}}
+
+.photo-card{break-inside:avoid;margin-bottom:20px;border-radius:18px;overflow:hidden;cursor:pointer;box-shadow:0 4px 22px var(--shadow);background:var(--sand);transition:transform .3s,box-shadow .3s}
+.photo-card:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(44,33,24,.18)}
+.photo-card-img{width:100%;display:block;object-fit:cover}
+.photo-caption{padding:14px 18px 16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--brown);background:white}
+
+/* NOTES */
+.notes-section{background:linear-gradient(160deg,#f3eff9 0%,#fdf4f4 55%,#eef4ee 100%)}
+.notes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px}
+.note-card{border-radius:22px;padding:34px 30px;transition:transform .3s,box-shadow .3s}
+.note-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px var(--shadow)}
+.note-card.lav{background:var(--lav-lt);border:1px solid rgba(160,140,200,.2)}
+.note-card.ros{background:#fef0f0;border:1px solid rgba(200,150,150,.2)}
+.note-card.sag{background:var(--sage-lt);border:1px solid rgba(120,170,120,.2)}
+.note-card.san{background:#faf3e8;border:1px solid rgba(180,150,100,.2)}
+.note-quote{font-size:2.8rem;line-height:1;margin-bottom:10px;opacity:.35}
+.note-card.lav .note-quote{color:var(--lavender)}
+.note-card.ros .note-quote{color:var(--rose)}
+.note-card.sag .note-quote{color:var(--sage)}
+.note-card.san .note-quote{color:var(--gold)}
+.note-text{font-family:'Cormorant Garamond',serif;font-size:1.08rem;line-height:1.78;color:var(--ink);margin-bottom:22px}
+.note-from{font-family:'Satisfy',cursive;font-size:1.1rem;color:var(--mauve)}
+
+/* VIDEOS */
+.videos-section{background:var(--cream)}
+.videos-section .section-heading em{color:var(--sage)}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;max-width:900px;margin:0 auto}
+.video-card{border-radius:20px;overflow:hidden;background:white;box-shadow:0 4px 24px var(--shadow);transition:transform .3s,box-shadow .3s}
+.video-card:hover{transform:translateY(-5px);box-shadow:0 16px 44px rgba(44,33,24,.15)}
+.video-frame{width:100%;aspect-ratio:9/16;background:var(--sand);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:var(--muted);overflow:hidden}
+.video-frame video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
+.video-frame iframe{width:100%;height:100%;border:none;display:block}
+.video-info{padding:18px 22px}
+.video-info p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--brown)}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.45);text-align:center;padding:72px 24px}
+.footer-heart{font-family:'Satisfy',cursive;font-size:2.2rem;color:var(--rose);margin-bottom:14px}
+.footer-names{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.6rem;color:rgba(255,255,255,.88);margin-bottom:12px}
+.footer-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,.38)}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(20,12,8,.88);z-index:500;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+.lightbox.open{display:flex}
+.lb-inner{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;gap:16px}
+.lb-inner img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.lb-caption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,.6)}
+.lb-close{position:absolute;top:-16px;right:-16px;width:36px;height:36px;border-radius:50%;background:var(--rose-dk);color:white;border:none;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Richard & Ari ♡</div>
+  <ul class="nav-links">
+    <li><a href="#music"> Our Song</a></li>
+    <li><a href="#photos">Photos</a></li>
+    <li><a href="#notes">Love Notes</a></li>
+    <li><a href="#videos">Videos</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="petal" style="left:7%;animation-duration:13s;animation-delay:0s">🌸</span>
+  <span class="petal" style="left:23%;animation-duration:16s;animation-delay:2s">✿</span>
+  <span class="petal" style="left:52%;animation-duration:12s;animation-delay:1s">🌷</span>
+  <span class="petal" style="left:74%;animation-duration:15s;animation-delay:3.5s">🌸</span>
+  <span class="petal" style="left:88%;animation-duration:14s;animation-delay:.8s">✿</span>
+  <span class="petal" style="left:38%;animation-duration:17s;animation-delay:4s">🌹</span>
+
+  <div class="hero-eyebrow">♡ &nbsp; a love story &nbsp; ♡</div>
+  <h1 class="hero-title">Happy <em>One Year</em><br>Anniversary</h1>
+  <p class="hero-names">Richard & Ari</p>
+  <p class="hero-sub">my absolute favorite.</p>
+  <div class="hero-scroll">
+    <span class="scroll-txt">scroll to explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section class="music-section" id="music">
+  <div class="music-inner reveal">
+    <p class="music-lbl">♪ &nbsp; playing on repeat</p>
+    <h2 class="music-title"><span>Him & I</span> — Halsey & G‑Eazy</h2>
+    <p class="music-note">the song that's reminds me us</p>
+    <div class="music-player">
+      <iframe src="https://embed.music.apple.com/us/album/the-beautiful-damned/1308645364?i=1308645368"
+        height="175" frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy" style="width:100%;overflow:hidden;background:transparent;"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="pic">
+    <div class="contents none boldtext">US IF WE WERE CATS</div> 
+  </section>
+
+<!-- PHOTOS -->
+<section class="photos-section" id="photos">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-tag" style="color:var(--rose-dk)">📸 &nbsp; captured moments</p>
+      <h2 class="section-heading">Our <em>Photos</em> Together</h2>
+      <p class="section-desc">every photo a little piece of us I never want to forget</p>
+    </div>
+    <div class="gallery-masonry" id="photoGrid">
+      <div class="photo-card reveal" onclick="openLB(this)">
+        <img class="photo-card-img" src="photos/photo1.jpg" alt="our memory">
+        <div class="photo-caption"> the beginning ✨</div>
+      </div>
+      <div class="photo-card reveal" onclick="openLB(this)">
+        <img class="photo-card-img" src="photos/photo2.jpg" alt="our memory">
+        <div class="photo-caption">my fav memory </div>
+      </div>
+      <div class="photo-card reveal" onclick="openLB(this)">
+        <img class="photo-card-img" src="photos/photo3.jpg" alt="our memory">
+        <div class="photo-caption"> fav date nights🌙</div>
+      </div>
+      <div class="photo-card reveal" onclick="openLB(this)">
+        <img class="photo-card-img" src="photos/photo4.jpg" alt="our memory">
+        <div class="photo-caption">you make everything better</div>
+      </div>
+      <div class="photo-card reveal" onclick="openLB(this)">
+        <img class="photo-card-img" src="photos/photo5.jpg" alt="our memory">
+        <div class="photo-caption">just us</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <section class="pic3">
+  <div class="contents">ME & YOU </div>
+  </section> 
+
+<div class="divider">♡ &nbsp; ♡ &nbsp; ♡</div>
+
+<!-- NOTES -->
+<section class="notes-section" id="notes">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-tag" style="color:var(--mauve)">💌 &nbsp; from the heart</p>
+      <h2 class="section-heading">Love <em style="color:var(--mauve)">Notes</em></h2>
+      <p class="section-desc">things I wanted to tell you for long time</p>
+    </div>
+    <div class="notes-grid" id="notesGrid">
+      <div class="note-card lav reveal">
+        <div class="note-quote">"</div>
+        <p class="note-text">Happy one year anniversary, Pookie.
+It’s been the most amazing, most character-developing year. We’ve shared so much love, laughter, and care, and I’m so grateful for all the memories we’ve made together. I hope this is only the beginning of many more beautiful memories for us.
+      </p>
+        <p class="note-from">— Ari🤍</p>
+      </div>
+      <div class="note-card ros reveal">
+        <div class="note-quote">"</div>
+        <p class="note-text">Being with you has brought so much happiness into my life. My heart still gets so full every time I think about us. Thank you for loving me, being patient with me, understanding me, and staying by my side. And i want to say i am sorry deeply sorry for sometimes i dont notice your effort or realize your effort later than at that moment, there was a time i was so hard on you.. i didnt mean to i just needed to reflect myself i hope you understand and give me time to develop myself for you. This past year wasn’t just about memories — it was about growing together and learning each other. We had our ups and downs and went through a lot of hard times, but no matter what, we stayed by each other’s side. I’ll always be grateful that I get to love you.</p>
+        <p class="note-from">— i love you 🌸</p>
+      </div>
+      <div class="note-card sag reveal">
+        <div class="note-quote">"</div>
+        <p class="note-text">This past year has taught us so many things, and I truly believe we’ve learned a lot from each other. You supported me, helped me grow, and even helped me evolve in so many ways. But most importantly, it’s who you are as a person that made me fall in love with you. I love the way you get emotional — it only makes you look even stronger in my eyes. I love how much you care about my personality, the soft spot you have for me, and the way you treat your mom and dad and take care of them. I also admire how you’re always willing to help others, and how you take care of your physical health, go to the gym, and stay focused on your education. 
+</p>
+        <p class="note-from">— i am so proud of you✨</p>
+      </div>
+      <div class="note-card san reveal">
+        <div class="note-quote">"</div>
+        <p class="note-text">Richard. I love you more than any note can say.
+          Here is some verses that i loved.
+          Romans 12:10 “Be devoted to one another in love…”
+Song of Solomon 6:3 “I am my beloved’s and my beloved is mine.”</p>
+        <p class="note-from">— Ari 💛</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">♡ &nbsp; ♡ &nbsp; ♡</div>
+
+<section class="pic2">
+    <div class="contents none boldtext">MINE</div> 
+  </section>
+
+<!-- VIDEOS -->
+<section class="videos-section" id="videos">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-tag" style="color:var(--sage)">🎞️ &nbsp; moving memories</p>
+      <h2 class="section-heading">Video <em style="color:var(--sage)">Memories</em></h2>
+      <p class="section-desc">moments too good to stay still</p>
+    </div>
+    <div class="video-grid" id="videoGrid">
+      <div class="video-card reveal">
+        <div class="video-frame">
+          <video src="videos/video1.mp4" controls playsinline preload="metadata"></video>
+        </div>
+        <div class="video-info"><p>our first memory 🎬</p></div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-frame">
+          <video src="videos/video2.mp4" controls playsinline preload="metadata"></video>
+        </div>
+        <div class="video-info"><p>a moment to keep forever ✨</p></div>
+      </div>
+      <div class="video-card reveal">
+        <div class="video-frame">
+          <video src="videos/video3.mp4" controls playsinline preload="metadata"></video>
+        </div>
+        <div class="video-info"><p>just being us 🤍</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-heart">♡</p>
+  <p class="footer-names">Richard & Ari</p>
+  <p class="footer-note">one year down, many more to go — made with all my love</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLB(event)">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLB()">✕</button>
+    <img id="lbImg" src="" alt="">
+    <p class="lb-caption" id="lbCaption"></p>
+  </div>
+</div>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Lightbox
+function openLB(el){ const img=el.querySelector('img'); if(!img)return; document.getElementById('lbImg').src=img.src; document.getElementById('lbCaption').textContent=el.querySelector('.photo-caption')?.textContent||''; document.getElementById('lightbox').classList.add('open'); }
+function closeLB(e){ if(!e||e.target===document.getElementById('lightbox')||e.target.classList.contains('lb-close')) document.getElementById('lightbox').classList.remove('open'); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') document.getElementById('lightbox').classList.remove('open'); });
+
+</script>
+</body>
+</html>
